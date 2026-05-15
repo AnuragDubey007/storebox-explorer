@@ -1,16 +1,84 @@
-# React + Vite
+# Storebox File Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A VS Code-style file explorer built with React + Vite for the Storebox AI Frontend Engineer Assignment.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[https://storebox-explorer-liard.vercel.app/]
 
-## React Compiler
+## Setup Instructions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Make sure you have Node.js installed (v18 or above recommended).
 
-## Expanding the ESLint configuration
+```bash
+# Clone the repo
+git clone https://github.com/AnuragDubey007/storebox-explorer.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Go into the folder
+cd storebox-explorer
+
+# Install dependencies
+npm install
+
+# Run locally
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Features
+
+- Create files and folders from the home screen or header buttons
+- Nested folders — folders inside folders supported
+- Rename any file or folder by double clicking or using Alt+R
+- Delete with a confirmation modal so you don't delete by accident
+- Right click context menu on any item
+- Dark and light mode toggle
+- All data persists in localStorage — refresh and everything is still there
+- Clean empty state with keyboard shortcut guide when no files exist
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|---|---|
+| Alt + N | New file |
+| Alt + Shift + N | New folder |
+| Alt + R | Rename selected item |
+| Delete | Delete selected item |
+
+## Project Structure
+
+```
+storebox-explorer/
+├── index.html
+├── vite.config.js
+├── package.json
+├── README.md
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── FileTree.jsx
+│   │   ├── TreeNode.jsx
+│   │   ├── EmptyState.jsx
+│   │   ├── ContextMenu.jsx
+│   │   └── DeleteModal.jsx
+│   ├── hooks/
+│   │   └── useFileTree.js
+│   └── utils/
+│       └── helpers.js
+```
+
+## Tech Stack
+
+- React 18
+- Vite
+- Lucide React (icons only)
+- Vanilla CSS with CSS variables for theming
+- No file-tree libraries used
+
+## LLM Usage
+
+Used Claude (claude.ai) to convert the original HTML/CSS/JS prototype from canvaAI into a React component architecture. All logic, structure decisions, and debugging were done through conversation with Claude. Full chat history attached as `chat-history.md`.
